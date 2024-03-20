@@ -70,11 +70,11 @@ CREATE TABLE [dbo].[Customers](
 
 [name][varchar](50) NULL,
 
- CONSTRAINT [PK_Customers] PRIMARY KEY CLUSTERED 
+Â CONSTRAINT [PK_Customers] PRIMARY KEY CLUSTERED 
 
 (
 
-   [id]
+Â Â  [id]
 ASC
 
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
@@ -97,11 +97,11 @@ CREATE TABLE [dbo].[Orders](
 
 [customerId][int] NULL,
 
- CONSTRAINT [PK_Orders] PRIMARY KEY CLUSTERED 
+Â CONSTRAINT [PK_Orders] PRIMARY KEY CLUSTERED 
 
 (
 
-       [id]
+Â Â Â Â Â Â  [id]
 ASC
 
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
@@ -147,12 +147,12 @@ WHERE o.id IS NULL
 Return the result table in any order. */
 
 CREATE TABLE [dbo].[Weather](
-       [id][int] NOT NULL,
-       [recordDate][date] NULL,
-       [temperature][int] NULL,
- CONSTRAINT [PK_Weather] PRIMARY KEY CLUSTERED
+Â Â Â Â Â Â  [id][int] NOT NULL,
+Â Â Â Â Â Â  [recordDate][date] NULL,
+Â Â Â Â Â Â  [temperature][int] NULL,
+Â CONSTRAINT [PK_Weather] PRIMARY KEY CLUSTERED
 (
-       [id]
+Â Â Â Â Â Â  [id]
 ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
@@ -214,12 +214,12 @@ GROUP BY player_id
 Return the result table in any order. */
 
 CREATE TABLE [dbo].[Customers](
-       [id][int] NOT NULL,
-       [name][varchar](50) NULL,
-       [referee_id][int] NULL,
- CONSTRAINT [PK_Customres1] PRIMARY KEY CLUSTERED
+Â Â Â Â Â Â  [id][int] NOT NULL,
+Â Â Â Â Â Â  [name][varchar](50) NULL,
+Â Â Â Â Â Â  [referee_id][int] NULL,
+Â CONSTRAINT [PK_Customres1] PRIMARY KEY CLUSTERED
 (
-       [id]
+Â Â Â Â Â Â  [id]
 ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
@@ -245,9 +245,9 @@ WHERE referee_id<> 2 OR referee_id IS NULL
 /* Write an SQL query to find the customer_number for the customer who has placed the largest number of orders. */
 
 CREATE TABLE [dbo].[Orders](
-       [order_number]
+Â Â Â Â Â Â  [order_number]
 [int] NULL,
-       [customer_number]
+Â Â Â Â Â Â  [customer_number]
 [int] NULL
 ) ON [PRIMARY]
 GO
@@ -277,20 +277,20 @@ Write an SQL query to report the name, population, and area of the big countries
 Return the result table in any order. 
 A country is big if:
 
-·       it has an area of at least three million (i.e., 3000000 km2), or
+Â·       it has an area of at least three million (i.e., 3000000 km2), or
 
-·       it has a population of at least twenty-five million (i.e., 25000000).*/
+Â·       it has a population of at least twenty-five million (i.e., 25000000).*/
 
 
 CREATE TABLE [dbo].[World](
-       [name][varchar](50) NOT NULL,
-       [continent][varchar](50) NULL,
-       [area][int] NULL,
-       [population][int] NULL,
-       [gdp][bigint] NULL,
- CONSTRAINT [PK_World] PRIMARY KEY CLUSTERED
+Â Â Â Â Â Â  [name][varchar](50) NOT NULL,
+Â Â Â Â Â Â  [continent][varchar](50) NULL,
+Â Â Â Â Â Â  [area][int] NULL,
+Â Â Â Â Â Â  [population][int] NULL,
+Â Â Â Â Â Â  [gdp][bigint] NULL,
+Â CONSTRAINT [PK_World] PRIMARY KEY CLUSTERED
 (
-       [name]
+Â Â Â Â Â Â  [name]
 ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
@@ -322,8 +322,8 @@ WHERE
 Return the result table in any order. */
 
 CREATE TABLE [dbo].[courses](
-       [student][varchar](50) NULL,
-       [class][varchar](50) NULL
+Â Â Â Â Â Â  [student][varchar](50) NULL,
+Â Â Â Â Â Â  [class][varchar](50) NULL
 ) ON [PRIMARY]
 GO
 INSERT [dbo].[courses] ([student], [class]) VALUES (N'A', N'Math')
@@ -357,13 +357,13 @@ HAVING count(student) >= 5
 Return the result table ordered by rating in descending order. */
 
 CREATE TABLE [dbo].[Cinema](
-       [id][int] NOT NULL,
-       [movie][varchar](50) NULL,
-       [description][varchar](50) NULL,
-       [rating][float] NULL,
- CONSTRAINT [PK_Cinema] PRIMARY KEY CLUSTERED
+Â Â Â Â Â Â  [id][int] NOT NULL,
+Â Â Â Â Â Â  [movie][varchar](50) NULL,
+Â Â Â Â Â Â  [description][varchar](50) NULL,
+Â Â Â Â Â Â  [rating][float] NULL,
+Â CONSTRAINT [PK_Cinema] PRIMARY KEY CLUSTERED
 (
-       [id]
+Â Â Â Â Â Â  [id]
 ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
